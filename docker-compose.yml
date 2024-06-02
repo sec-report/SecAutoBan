@@ -1,0 +1,36 @@
+name: sec_auto_ban
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    hostname: clickhouse
+    restart: always
+    networks:
+      - sec_auto_ban
+    environment:
+      CLICKHOUSE_DB: sec_auto_ban
+      CLICKHOUSE_USER: sec_auto_ban
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
+      CLICKHOUSE_PASSWORD: ${clickhouse_password}
+    volumes:
+      - ./data/clickhouse/data:/var/lib/clickhouse
+      - ./data/clickhouse/log:/var/log/clickhouse-server
+  sec-auto-ban:
+    image: secreport/sec-auto-ban:latest
+    container_name: sec_auto_ban
+    restart: always
+    depends_on:
+        - clickhouse
+    environment:
+      listen: 0.0.0.0:80
+      db_dsn: clickhouse://sec_auto_ban:${clickhouse_password}@clickhouse:9000/sec_auto_ban
+    networks:
+      - sec_auto_ban
+    ports:
+      - 80:80
+
+networks:
+  sec_auto_ban:
+    name: sec_auto_ban
+    driver: bridge
