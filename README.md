@@ -2,6 +2,9 @@
 安全设备告警IP全自动封禁平台，支持百万IP秒级分析处理。
 
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/index.jpg)
+
+封禁流水：
+
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/flow.gif)
 
 # 开始使用
@@ -56,6 +59,12 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 使用该Key运行告警处理模块，请点击：[device/block](https://github.com/sec-report/SecAutoBan/tree/main/device/block) 查看模块编写及运行方式。
 
 目前仓库中仅有少量模版，未适配的设备需手动实现少量处理函数。对于通用类设备，欢迎适配后提起PR推送至`device/block`目录，方便其他人使用。
+
+## 网络连接说明
+
+* 核心模块：核心模块不会自动发起TCP连接，只需管理机器能访问Web服务即可。
+* 告警模块：如需监听Syslog请打开安全设备到告警模块对应UDP端口，同时告警模块需要正向访问核心模块Web端口（`WebSocket`通讯）。
+* 封禁模块：封禁模块无需监听任何端口，只需要正向访问核心模块Web端口（`WebSocket`通讯），及需要连接的封禁设备即可。
 
 ## Star History
 
