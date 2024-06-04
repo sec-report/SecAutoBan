@@ -5,11 +5,12 @@
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/flow.gif)
 
 # 开始使用
+
 平台分为三大模块，分别为：告警日志解析处理模块、核心处理模块、IP封禁/解禁模块。
 
 其中，告警模块处理的IP会传入核心模块，核心模块会对IP进行去重过滤等处理，处理后IP会发送到封禁模块进行封禁。
 
-具体功能脑图如下：
+具体流程思维导图如下：
 
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/mind.jpg)
 
