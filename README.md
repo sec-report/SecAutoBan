@@ -43,9 +43,9 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/alarm2.jpg)
 
-使用该Key运行告警处理模块，请跳转：[device/alarm](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm) 查看模块编写及运行方式。
+使用获得的设备Key运行告警模块，具体使用详情请跳转至：[device/alarm](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm) 查看。
 
-目前仓库中仅有少量模版，未适配的设备需手动实现少量函数。对于通用类设备，欢迎适配后提起PR推送至`device/alarm`目录，方便其他人使用。
+目前仓库中仅有少量模版，未适配的设备需手动实现至多一个函数。对于通用类设备，欢迎适配后提起PR推送至`device/alarm`目录，方便其他人使用。
 
 ## 封禁模块使用
 首先在管理后台添加封禁设备：
@@ -56,9 +56,9 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/block2.jpg)
 
-使用该Key运行告警处理模块，请点击：[device/block](https://github.com/sec-report/SecAutoBan/tree/main/device/block) 查看模块编写及运行方式。
+使用获得的设备Key运行封禁模块，具体使用详情请跳转至：[device/block](https://github.com/sec-report/SecAutoBan/tree/main/device/block) 查看。
 
-目前仓库中仅有少量模版，未适配的设备需手动实现少量处理函数。对于通用类设备，欢迎适配后提起PR推送至`device/block`目录，方便其他人使用。
+目前仓库中仅有少量模版，未适配的设备需手动实现至多两个函数。对于通用类设备，欢迎适配后提起PR推送至`device/block`目录，方便其他人使用。
 
 ## 网络连接说明
 
