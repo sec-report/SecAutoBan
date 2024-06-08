@@ -72,6 +72,10 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 * 告警模块：如需监听Syslog请打开安全设备到告警模块对应UDP端口，同时告警模块需要正向访问核心模块Web端口（`WebSocket`通讯）。
 * 封禁模块：封禁模块无需监听任何端口，只需要正向访问核心模块Web端口（`WebSocket`通讯），及需要连接的封禁设备即可。
 
+## 沟通群
+
+![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/wx.jpg)
+
 ## Star History
 
 <a href="https://github.com/sec-report/SecAutoBan/stargazers">
