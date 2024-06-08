@@ -8,7 +8,7 @@ pip3 install pycryptodome
 
 ## base_example
 
-基础模版分为`fat`版和`thin`版，其中fat版需要实现4个函数完成封禁全功能。若不想使用全功能，只想封禁IP可以使用thin版。
+基础模版分为`fat`版和`thin`版，其中fat版需要实现4个函数完成封禁全功能。若不想使用全功能，只想粗暴的封禁IP可以使用thin版。
 
 ### fat版详细说明
 
