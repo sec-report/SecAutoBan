@@ -74,7 +74,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ## 沟通群
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/wx.jpg)
+<img width="500" src="https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/wx.jpg">
 
 ## Star History
 
