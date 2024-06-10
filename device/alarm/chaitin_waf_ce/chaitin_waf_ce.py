@@ -83,6 +83,7 @@ def send_alarm_ip(ip: str, origin: str):
 
 
 def analysis_alarm():
+    event_id_list = []
     while True:
         time.sleep(5)
         try:
@@ -101,7 +102,11 @@ def analysis_alarm():
             customize_print("[-] WAF连接失败")
             continue
         for i in r.json()["data"]["data"]:
-            send_alarm_ip(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
+            if i["event_id"] not in event_id_list:
+                send_alarm_ip(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
+                event_id_list.append(i["event_id"])
+                if len(event_id_list) > 10000:
+                    event_id_list.pop(0)
 
 
 if __name__ == "__main__":
