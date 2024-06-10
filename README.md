@@ -76,6 +76,10 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 <img width="300" src="https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/wx.jpg">
 
+## 其他作品
+
+[SecReport](https://github.com/sec-report/SecReport)：ChatGPT加持的，多人在线协同信息安全报告编写平台。
+
 ## Star History
 
 <a href="https://github.com/sec-report/SecAutoBan/stargazers">
