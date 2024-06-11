@@ -2,3 +2,4 @@
 
 * [example](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/example): 样例
 * [chaitin_waf_ce](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/chaitin_waf_ce): 长亭WAF社区版
+* [hfish](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/threatbook_hfish): 微步蜜罐HFish
