@@ -3,7 +3,7 @@
 安装以下脚本依赖
 
 ```
-pip3 install pycryptodome
+pip3 install pycryptodome websocket-client
 ```
 
 ## base_example
