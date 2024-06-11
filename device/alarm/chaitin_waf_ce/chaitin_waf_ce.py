@@ -84,11 +84,24 @@ def send_alarm_ip(ip: str, origin: str):
     ws.send(iv + aes_cfb_encrypt(sk[3:].encode(), iv, json.dumps(send_data).encode()))
 
 
+def password_login() -> str:
+    r = requests.get(chaitin_waf_url + "/api/open/auth/csrf", verify=False)
+    if r.status_code != 200:
+        return ""
+    post_data = {
+        "csrf_token": r.json()["data"]["csrf_token"],
+        "username": chaitin_waf_login_conf["username"],
+        "password": chaitin_waf_login_conf["password"]
+    }
+    r = requests.post(chaitin_waf_url + "/api/open/auth/login", json=post_data, verify=False)
+    if r.status_code != 200:
+        return ""
+    return r.json()["data"]["jwt"]
+
+
 def get_header():
     header = {}
-    if len(chaitin_waf_login_conf["jwt-secret"]) == 0:
-        header["Authorization"] = "Bearer " + chaitin_waf_login_conf["bearer"]
-    else:
+    if len(chaitin_waf_login_conf["jwt-secret"]) != 0:
         t = int((datetime.datetime.now()+datetime.timedelta(days=7)).timestamp())
         jwt_payload = {
             "uid": 1,
@@ -101,11 +114,16 @@ def get_header():
         }
         token = jwt.encode(jwt_payload, chaitin_waf_login_conf["jwt-secret"], algorithm='HS256')
         header["Authorization"] = "Bearer " + token
+    if len(chaitin_waf_login_conf["username"]) != 0:
+        header["Authorization"] = "Bearer " + password_login()
+        return header
+    header["Authorization"] = "Bearer " + chaitin_waf_login_conf["bearer"]
     return header
 
 
 def analysis_alarm():
     event_id_list = []
+    ip_list = []
     while True:
         time.sleep(5)
         try:
@@ -124,11 +142,14 @@ def analysis_alarm():
             customize_print("[-] WAF连接失败")
             continue
         for i in r.json()["data"]["data"]:
-            if i["event_id"] not in event_id_list:
+            if i["event_id"] not in event_id_list and i["src_ip"] not in ip_list:
                 send_alarm_ip(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
                 event_id_list.append(i["event_id"])
-                if len(event_id_list) > 10000:
+                if len(event_id_list) > 1000:
                     event_id_list.pop(0)
+                ip_list.append(i["src_ip"])
+                if len(ip_list) > 1000:
+                    ip_list.pop(0)
 
 
 if __name__ == "__main__":
@@ -138,6 +159,8 @@ if __name__ == "__main__":
     chaitin_waf_url = "https://xxx.xxx.xxx.xxx:9443"
     chaitin_waf_login_conf = {
         "jwt-secret": "",
+        "username": "",
+        "password": "",
         "bearer": "xxx.xxx.xxx"
     }
     ws = websocket.WebSocketApp(
