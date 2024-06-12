@@ -146,12 +146,14 @@ def get_db_all_ip():
 def block_ip(ip):
     if check_exist_ip(ip):
         return
+    global ban_ip_list
     ban_ip_list.append(ip)
     sql_conn.execute('INSERT INTO IP (ip) VALUES (?)', (ip,))
     sql_conn.commit()
 
 
 def unblock_ip(ip):
+    global ban_ip_list
     ban_ip_list.remove(ip)
     sql_conn.execute('DELETE FROM IP WHERE ip=?', (ip,))
     sql_conn.commit()
