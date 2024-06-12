@@ -201,6 +201,6 @@ if __name__ == "__main__":
     is_login = False
     pool = ThreadPool(processes=2)
     pool.apply_async(connect_websocket)
-    run_sniff()
+    pool.apply_async(run_sniff)
     pool.close()
     pool.join()
