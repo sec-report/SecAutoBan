@@ -46,7 +46,7 @@ sk = "sk-xxx"
 opnsense_url = "http://xxx.xxx.xxx.xxx"
 ```
 
-#### 修改刚刚获取的API
+#### 修改刚刚获取的OPNsense API
 
 更改脚本第`140`-`141`行
 
