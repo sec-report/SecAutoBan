@@ -135,7 +135,7 @@ if __name__ == "__main__":
     server_ip = "127.0.0.1"
     server_port = 8080
     sk = "sk-xxx"
-    opnsense_url = "http://10.0.0.1"
+    opnsense_url = "http://xxx.xxx.xxx.xxx"
     opnsense_alias_name = "sec_auto_ban"
     opnsense_api_key = 'xxx'
     opnsense_api_secret = 'xxx'
