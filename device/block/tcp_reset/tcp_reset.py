@@ -137,9 +137,11 @@ def is_filter():
 
 def get_db_all_ip():
     db_ip_list = []
+    sql_conn = sqlite3.connect(db_name)
     cursor = sql_conn.cursor().execute("SELECT ip from IP")
     for row in cursor:
         db_ip_list.append(row[0])
+    sql_conn.close()
     return db_ip_list
 
 
@@ -148,15 +150,19 @@ def block_ip(ip):
         return
     global ban_ip_list
     ban_ip_list.append(ip)
+    sql_conn = sqlite3.connect(db_name)
     sql_conn.execute('INSERT INTO IP (ip) VALUES (?)', (ip,))
     sql_conn.commit()
+    sql_conn.close()
 
 
 def unblock_ip(ip):
     global ban_ip_list
     ban_ip_list.remove(ip)
+    sql_conn = sqlite3.connect(db_name)
     sql_conn.execute('DELETE FROM IP WHERE ip=?', (ip,))
     sql_conn.commit()
+    sql_conn.close()
 
 
 def get_all_ips() -> list:
@@ -168,12 +174,14 @@ def check_exist_ip(ip) -> bool:
 
 
 def run_sniff():
+    sql_conn = sqlite3.connect(db_name)
     sql_conn.execute('''
         CREATE TABLE IF NOT EXISTS IP (
             ip TEXT,
             CONSTRAINT idx_ip UNIQUE (ip)
         )
     ''')
+    sql_conn.close()
     global ban_ip_list
     ban_ip_list.clear()
     ban_ip_list += get_db_all_ip()
@@ -191,7 +199,7 @@ if __name__ == "__main__":
     sniff_iface = "eth0"
     reset_iface = "eth1"
     ban_ip_list = []
-    sql_conn = sqlite3.connect('block_ip.db')
+    db_name = "block_ip.db"
     ws = websocket.WebSocketApp(
         "ws://" + server_ip + ":" + str(server_port) + "/device",
         on_message=on_message,
