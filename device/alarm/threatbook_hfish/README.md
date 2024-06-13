@@ -5,7 +5,7 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client
+pip3 install pycryptodome websocket-client requests
 ```
 
 ### 配置模块
