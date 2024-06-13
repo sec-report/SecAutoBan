@@ -9,7 +9,7 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client PyJWT
+pip3 install pycryptodome websocket-client requests PyJWT
 ```
 
 ### 配置模块
