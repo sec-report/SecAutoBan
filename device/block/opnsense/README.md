@@ -20,13 +20,15 @@ OPNsense封禁模块
 
 ![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/opnsense/img/2.jpg)
 
+## 配置模块
+
 ### 安装依赖
 
 ```
 pip3 install pycryptodome websocket-client requests
 ```
 
-### 配置模块
+### 修改配置
 
 #### 修改回连核心模块配置
 
