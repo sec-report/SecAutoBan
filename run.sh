@@ -1,13 +1,20 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+
+
+downloadDockerCompose(){
+     if [ ! -f "docker-compose.yml" ]; then
+         wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/docker-compose.yml
+     fi
+}
 
 createPassword(){
     if [ ! -f ".env" ]; then
-        echo -n "clickhouse_password=" > .env
-        echo $(uuidgen |sed 's/-//g') >> .env
+        echo "clickhouse_password=$(uuidgen |sed 's/-//g')" > .env
     fi
 }
 
 run(){
+    downloadDockerCompose
     createPassword
     docker compose up -d
 }
