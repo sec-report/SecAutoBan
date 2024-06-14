@@ -20,7 +20,6 @@
 ## 核心模块安装
 ```shell
 mkdir SecAutoBan && cd SecAutoBan
-wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/docker-compose.yml
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/run.sh
 chmod +x run.sh
 ./run.sh
