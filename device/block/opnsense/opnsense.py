@@ -1,6 +1,7 @@
 import sys
 import json
 import time
+import requests
 import websocket
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
