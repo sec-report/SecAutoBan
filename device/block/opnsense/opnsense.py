@@ -89,7 +89,6 @@ def connect_websocket():
 def block_ip(ip):
     if check_exist_ip(ip):
         return
-    url = 
     post_data = {
         "address": ip
     }
