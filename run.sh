@@ -24,6 +24,10 @@ stop(){
 }
 
 update(){
+    if [ -f "docker-compose.yml" ]; then
+         rm docker-compose.yml
+         downloadDockerCompose
+    fi
     docker compose pull
 }
 
