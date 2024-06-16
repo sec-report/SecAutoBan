@@ -59,6 +59,15 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 目前仓库中仅有少量模版，未适配的设备只需手动实现两个函数。对于通用类设备，欢迎适配后提起PR推送至`device/block`目录，方便其他人使用。
 
+## 告警/封禁模块列表
+
+> 现有模块如下，实时更新中
+
+| 告警模块  | 封禁模块 |
+| ------------- | -------- |
+| [长亭WAF社区版](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/chaitin_waf_ce) | [旁路阻断](https://github.com/sec-report/SecAutoBan/tree/main/device/block/tcp_reset) |
+| [微步蜜罐HFish](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/threatbook_hfish) | [OPNsense](https://github.com/sec-report/SecAutoBan/tree/main/device/block/opnsense) |
+
 ## 黑/白名单说明
 
 * 黑名单就是已经封禁的IP，已封禁的IP都可以在该列表查询到。如果设置了有效期，到期后会自动解禁、删除。
