@@ -94,7 +94,7 @@ def block_ip(ip):
         port=routeros_config["port"],
         username=routeros_config["username"],
         password=routeros_config["password"],
-        plaintext_login=True  # 适用于 RouterOS 6.43 及更高版本
+        plaintext_login=routeros_config["plaintext_login"]
     )
     api = connection.get_api()
     address_list = api.get_resource('/ip/firewall/address-list')
@@ -108,11 +108,11 @@ def unblock_ip(ip):
         port=routeros_config["port"],
         username=routeros_config["username"],
         password=routeros_config["password"],
-        plaintext_login=True  # 适用于 RouterOS 6.43 及更高版本
+        plaintext_login=routeros_config["plaintext_login"]
     )
     api = connection.get_api()
     address_list = api.get_resource('/ip/firewall/address-list')
-    ip_list = address_list.get(list="sec_auto_ban", address="123.123.123.123")
+    ip_list = address_list.get(list="sec_auto_ban", address=ip)
     if len(ip_list) == 0:
         return
     address_list.remove(id=ip_list[0])
@@ -126,7 +126,7 @@ def get_all_ips() -> list:
         port=routeros_config["port"],
         username=routeros_config["username"],
         password=routeros_config["password"],
-        plaintext_login=True  # 适用于 RouterOS 6.43 及更高版本
+        plaintext_login=routeros_config["plaintext_login"]
     )
     api = connection.get_api()
     address_list = api.get_resource('/ip/firewall/address-list')
@@ -142,11 +142,11 @@ def check_exist_ip(ip) -> bool:
         port=routeros_config["port"],
         username=routeros_config["username"],
         password=routeros_config["password"],
-        plaintext_login=True  # 适用于 RouterOS 6.43 及更高版本
+        plaintext_login=routeros_config["plaintext_login"]
     )
     api = connection.get_api()
     address_list = api.get_resource('/ip/firewall/address-list')
-    ip_list = address_list.get(list="sec_auto_ban", address="123.123.123.123")
+    ip_list = address_list.get(list="sec_auto_ban", address=ip)
     connection.disconnect()
     if len(ip_list) == 0:
         return False
@@ -162,6 +162,7 @@ if __name__ == "__main__":
         port: 8728,
         username: 'admin',
         password: '',
+        plaintext_login: True,  # 适用于 RouterOS 6.43 及更高版本
         list_name: "sec_auto_ban"
     }
     ws = websocket.WebSocketApp(
