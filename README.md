@@ -83,7 +83,15 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ## 沟通群
 
-<img width="300" src="./img/wx.jpg">
+> 请加好友并备注：`SecAutoBan加群`
+
+<img width="250" src="./img/wx.jpg">
+
+## 公众号
+
+> 关注微信公众号: `信息安全报告`，更新会第一时间推送
+
+![](./img/mp_wx.jpg)
 
 ## 其他作品
 
