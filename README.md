@@ -42,7 +42,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ![](./img/alarm2.jpg)
 
-使用获得的设备Key运行告警模块，具体使用详情请跳转至：[device/alarm](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm) 查看。
+使用获得的设备Key运行告警模块，具体使用详情请跳转至：[device/alarm](./device/alarm) 查看。
 
 目前仓库中仅有少量模版，未适配的设备只需手动实现一个函数。对于通用类设备，欢迎适配后提起PR推送至`device/alarm`目录，方便其他人使用。
 
@@ -55,7 +55,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ![](./img/block2.jpg)
 
-使用获得的设备Key运行封禁模块，具体使用详情请跳转至：[device/block](https://github.com/sec-report/SecAutoBan/tree/main/device/block) 查看。
+使用获得的设备Key运行封禁模块，具体使用详情请跳转至：[device/block](./device/block) 查看。
 
 目前仓库中仅有少量模版，未适配的设备只需手动实现两个函数。对于通用类设备，欢迎适配后提起PR推送至`device/block`目录，方便其他人使用。
 
@@ -65,8 +65,8 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 | 告警模块  | 封禁模块 |
 | ------------- | -------- |
-| [长亭WAF社区版](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/chaitin_waf_ce) | [旁路阻断](https://github.com/sec-report/SecAutoBan/tree/main/device/block/tcp_reset) |
-| [微步蜜罐HFish](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/threatbook_hfish) | [OPNsense](https://github.com/sec-report/SecAutoBan/tree/main/device/block/opnsense) |
+| [长亭WAF社区版](./device/alarm/chaitin_waf_ce) | [旁路阻断](./device/block/tcp_reset) |
+| [微步蜜罐HFish](./device/alarm/threatbook_hfish) | [OPNsense](./device/block/opnsense) |
 | |[RouterOS](./device/block/router_os) |
 
 ## 黑/白名单说明
