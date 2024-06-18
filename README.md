@@ -1,11 +1,11 @@
 # SecAutoBan
 安全设备告警IP全自动封禁平台，支持百万IP秒级分析处理。
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/index.jpg)
+![](./img/index.jpg)
 
 封禁流水：
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/flow.gif)
+![](./img/flow.gif)
 
 # 开始使用
 
@@ -15,7 +15,7 @@
 
 具体流程思维导图如下：
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/mind.jpg)
+![](./img/mind.jpg)
 
 ## 核心模块安装
 ```shell
@@ -36,11 +36,11 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 ## 告警模块使用
 首先在管理后台添加告警设备：
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/alarm1.jpg)
+![](./img/alarm1.jpg)
 
 添加设备后，复制设备连接Key。（注意：设备连接Key仅显示一次，请妥善保存）
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/alarm2.jpg)
+![](./img/alarm2.jpg)
 
 使用获得的设备Key运行告警模块，具体使用详情请跳转至：[device/alarm](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm) 查看。
 
@@ -49,11 +49,11 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 ## 封禁模块使用
 首先在管理后台添加封禁设备：
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/block1.jpg)
+![](./img/block1.jpg)
 
 添加设备后，复制设备连接Key。（注意：设备连接Key仅显示一次，请妥善保存）
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/block2.jpg)
+![](./img/block2.jpg)
 
 使用获得的设备Key运行封禁模块，具体使用详情请跳转至：[device/block](https://github.com/sec-report/SecAutoBan/tree/main/device/block) 查看。
 
@@ -67,6 +67,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 | ------------- | -------- |
 | [长亭WAF社区版](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/chaitin_waf_ce) | [旁路阻断](https://github.com/sec-report/SecAutoBan/tree/main/device/block/tcp_reset) |
 | [微步蜜罐HFish](https://github.com/sec-report/SecAutoBan/tree/main/device/alarm/threatbook_hfish) | [OPNsense](https://github.com/sec-report/SecAutoBan/tree/main/device/block/opnsense) |
+| |[RouterOS](./device/block/router_os) |
 
 ## 黑/白名单说明
 
@@ -82,7 +83,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 ## 沟通群
 
-<img width="300" src="https://raw.githubusercontent.com/sec-report/SecAutoBan/main/img/wx.jpg">
+<img width="300" src="./img/wx.jpg">
 
 ## 其他作品
 
