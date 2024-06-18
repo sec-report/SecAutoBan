@@ -48,3 +48,8 @@ sniff_iface = "eth0"
 reset_iface = "eth1"
 ```
 
+## 运行
+
+```shell
+python3 tcp_reset.py
+```

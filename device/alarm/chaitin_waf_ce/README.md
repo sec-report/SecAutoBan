@@ -2,7 +2,7 @@
 
 长亭WAF社区版非专业版没有Syslog权限，采用前端轮询的方式获取告警数据。
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/chaitin_waf_ce/img/1.jpg)
+![](./img/1.jpg)
 
 ## 配置说明
 
@@ -44,7 +44,7 @@ WAF登录方案分为三种，适配不同情况。
 echo "select string_value from options where key='jwt-secret';" | sqlite3 /data/safeline/resources/mgt/mgt.db
 ```
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/chaitin_waf_ce/img/2.jpg)
+![](./img/2.jpg)
 
 > 若提示没有sqlite3，请手动安装，例如ubuntu为: `apt install -y sqlite3`。
 
@@ -80,7 +80,7 @@ chaitin_waf_login_conf = {
 
 登录WAF后，F12打开开发者工具，复制浏览器中任意网络连接请求头中`Authorization`字段`Bearer`下面的字符串
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/chaitin_waf_ce/img/3.jpg)
+![](./img/3.jpg)
 
 拿到Token后填入脚本第`164`行
 
@@ -93,7 +93,7 @@ chaitin_waf_login_conf = {
 }
 ```
 
-### 运行
+## 运行
 
 ```shell
 python3 chaitin_waf_ce.py

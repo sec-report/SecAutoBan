@@ -12,13 +12,13 @@ OPNsense封禁模块
 
 在`防火墙-别名`页面新建别名`sec_auto_ban`并保存:
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/opnsense/img/1.jpg)
+![](./img/1.jpg)
 
 ### 为别名组创建封禁规则
 
 在`防火墙-规则-浮动`页面新建两条规则，分别为阻止源IP为别名组及目标IP为别名组，图例:
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/opnsense/img/2.jpg)
+![](./img/2.jpg)
 
 ## 配置模块
 
@@ -40,7 +40,7 @@ server_port = 8080
 sk = "sk-xxx"
 ```
 
-#### 修改与WAF连接的地址
+#### 修改与OPNsense连接的地址
 
 更改脚本第`138`行
 
@@ -55,4 +55,10 @@ opnsense_url = "http://xxx.xxx.xxx.xxx"
 ```
 opnsense_api_key = 'xxx'
 opnsense_api_secret = 'xxx'
+```
+
+## 运行
+
+```shell
+python3 opnsense.py
 ```

@@ -32,10 +32,16 @@ hfish_url = "https://xxx.xxx.xxx.xxx:4433"
 
 进入`平台管理-系统配置-API配置`页面，复制api_key
 
-![](https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/threatbook_hfish/img/1.jpg)
+![](./img/1.jpg)
 
 更改脚本第`124`行
 
 ```
 hfish_api_key = "xxx"
+```
+
+## 运行
+
+```shell
+python3 threatbook_hfish.py
 ```
