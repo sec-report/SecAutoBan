@@ -67,7 +67,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 | ------------- | -------- |
 | [长亭WAF社区版](./device/alarm/chaitin_waf_ce) | [旁路阻断](./device/block/tcp_reset) |
 | [微步蜜罐HFish](./device/alarm/threatbook_hfish) | [OPNsense](./device/block/opnsense) |
-| |[RouterOS](./device/block/router_os) |
+| [奇安信天眼](./device/alarm/qianxin_skyeye) |[RouterOS](./device/block/router_os) |
 
 ## 黑/白名单说明
 
