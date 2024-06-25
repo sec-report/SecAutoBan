@@ -45,7 +45,7 @@ sk = "sk-xxx"
 更改脚本第`119`行，请与天眼SYSLOG中配置的端口一致
 
 ```
-listen_syslog_udp_port = 58765
+listen_syslog_udp_port = 547
 ```
 
 ## 运行

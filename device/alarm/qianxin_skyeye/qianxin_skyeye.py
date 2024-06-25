@@ -116,7 +116,7 @@ if __name__ == "__main__":
     server_ip = "127.0.0.1"
     server_port = 8080
     sk = "sk-xxx"
-    listen_syslog_udp_port = 58765
+    listen_syslog_udp_port = 547
     bypass_lan = True  # 过滤内网攻击，True 开启 | False 关闭
     ws = websocket.WebSocketApp(
         "ws://" + server_ip + ":" + str(server_port) + "/device",
