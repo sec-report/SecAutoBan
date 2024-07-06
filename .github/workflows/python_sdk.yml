@@ -13,6 +13,7 @@ jobs:
 
       - name: build release distributions
         run: |
+          python3 -m pip install setuptools
           python3 device/sdk/python/setup.py sdist
 
       - name: upload windows dists
