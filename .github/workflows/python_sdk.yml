@@ -39,5 +39,7 @@ jobs:
 
       - name: Publish release distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        if: startsWith(github.ref, 'refs/tags')
         with:
           packages-dir: device/sdk/python/dist/
+          skip-existing: true
