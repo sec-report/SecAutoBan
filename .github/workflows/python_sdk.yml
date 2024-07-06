@@ -13,8 +13,9 @@ jobs:
 
       - name: build release distributions
         run: |
+          cd  device/sdk/python
           python3 -m pip install setuptools
-          python3 device/sdk/python/setup.py sdist
+          python3 setup.py sdist -d ../../../dist
 
       - name: upload windows dists
         uses: actions/upload-artifact@v4
