@@ -37,12 +37,12 @@ RouterOS封禁模块
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client RouterOS-api
+pip3 install SecAutoBan RouterOS-api
 ```
 
 #### 修改回连核心模块配置
 
-更改脚本第`157`-`159`行
+更改脚本第`82`-`84`行
 
 ```
 server_ip = "127.0.0.1"
@@ -52,16 +52,16 @@ sk = "sk-xxx"
 
 #### 修改RouterOS配置
 
-更改脚本第`161`-`164`行
+更改脚本第`73`-`80`行
 
 ```
 routeros_config = {
-    host: "",  # 与RouterOS连接的IP
-    port: 8728,  # 默认端口8728，如自定义请修改
-    username: 'admin',  # 用户名
-    password: '',  # 密码
-    plaintext_login: True,  # 适用于 RouterOS 6.43 及更高版本
-    list_name: "sec_auto_ban"  # 与Address Lists name保持一致，正常情况无需修改
+    "host": "",  # 与RouterOS连接的IP
+    "port": 8728,  # 默认端口8728，如自定义请修改
+    "username": "admin",  # 用户名
+    "password": "",  # 密码
+    "plaintext_login": True,  # 适用于 RouterOS 6.43 及更高版本
+    "list_name": "sec_auto_ban"  # 与Address Lists name保持一致，正常情况无需修改
 }
 ```
 

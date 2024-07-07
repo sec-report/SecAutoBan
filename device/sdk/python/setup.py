@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="SecAutoBan",
-    version="1.0",
+    version="1.1",
     author="SecReport",
     author_email="sec-report@outlook.com",
     description="SecAutoBan SDK",

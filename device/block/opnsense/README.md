@@ -25,14 +25,14 @@ OPNsense封禁模块
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client requests
+pip3 install SecAutoBan requests
 ```
 
 ### 修改配置
 
 #### 修改回连核心模块配置
 
-更改脚本第`135`-`137`行
+更改脚本第`56`-`58`行
 
 ```
 server_ip = "127.0.0.1"
@@ -42,7 +42,7 @@ sk = "sk-xxx"
 
 #### 修改与OPNsense连接的地址
 
-更改脚本第`138`行
+更改脚本第`51`行
 
 ```
 opnsense_url = "http://xxx.xxx.xxx.xxx"
@@ -50,7 +50,7 @@ opnsense_url = "http://xxx.xxx.xxx.xxx"
 
 #### 修改刚刚获取的OPNsense API
 
-更改脚本第`140`-`141`行
+更改脚本第`52`-`53`行
 
 ```
 opnsense_api_key = 'xxx'

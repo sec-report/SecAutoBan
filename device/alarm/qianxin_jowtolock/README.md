@@ -19,14 +19,14 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client
+pip3 install SecAutoBan
 ```
 
 ### 配置模块
 
 #### 修改回连核心模块配置
 
-更改脚本第`110`-`112`行
+更改脚本第`36`-`38`行
 
 ```
 server_ip = "127.0.0.1"
@@ -36,7 +36,7 @@ sk = "sk-xxx"
 
 #### 配置syslog监听地址
 
-更改脚本第`113`行，请与椒图SYSLOG中配置的端口一致
+更改脚本第`33`行，请与椒图SYSLOG中配置的端口一致
 
 ```
 listen_syslog_udp_port = 567

@@ -21,9 +21,7 @@ def get_all_block_ip() -> list:
 
 # 若有更快速方法，请重新实现查询设备是否已封禁IP函数，返回True为已封禁，返回False为未封禁
 def check_exist_ip(ip) -> bool:
-    if ip in get_all_block_ip():
-        return True
-    return False
+    return ip in get_all_block_ip()
 
 
 if __name__ == "__main__":

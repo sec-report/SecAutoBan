@@ -5,14 +5,14 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client requests
+pip3 install SecAutoBan requests
 ```
 
 ### 配置模块
 
 #### 修改回连核心模块配置
 
-更改脚本第`120`-`122`行
+更改脚本第`46`-`48`行
 
 ```
 server_ip = "127.0.0.1"
@@ -22,7 +22,7 @@ sk = "sk-xxx"
 
 #### 配置与蜜罐连接的地址
 
-更改脚本第`123`行
+更改脚本第`43`行
 
 ```
 hfish_url = "https://xxx.xxx.xxx.xxx:4433"
@@ -34,7 +34,7 @@ hfish_url = "https://xxx.xxx.xxx.xxx:4433"
 
 ![](./img/1.jpg)
 
-更改脚本第`124`行
+更改脚本第`44`行
 
 ```
 hfish_api_key = "xxx"

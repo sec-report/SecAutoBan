@@ -11,7 +11,7 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client scapy
+pip3 install SecAutoBan scapy
 ```
 
 ### 配置模块
@@ -20,7 +20,7 @@ pip3 install pycryptodome websocket-client scapy
 
 > 注意路由配置，不能从镜像网卡回连，可以通过封禁网卡回连。
 
-更改脚本第`186`-`188`行
+更改脚本第`117`-`119`行
 
 ```
 server_ip = "127.0.0.1"
@@ -32,7 +32,7 @@ sk = "sk-xxx"
 
 > 旁路阻断方案需要镜像接收网络中全部流量进行分析，请配置镜像接口。
 
-更改脚本第`189`行
+更改脚本第`112`行
 
 ```
 sniff_iface = "eth0"
@@ -42,7 +42,7 @@ sniff_iface = "eth0"
 
 > 封禁网卡需能访问被阻断的设备，正常情况下直接接入交换即可。尽量接入到核心交换上，不然可能导致封禁不及时，漏掉数据包。
 
-更改脚本第`189`行
+更改脚本第`113`行
 
 ```
 reset_iface = "eth1"
