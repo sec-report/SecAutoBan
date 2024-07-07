@@ -15,9 +15,9 @@ pip3 install SecAutoBan requests
 更改脚本第`46`-`48`行
 
 ```
-server_ip = "127.0.0.1"
-server_port = 8080
-sk = "sk-xxx"
+server_ip = "127.0.0.1",
+server_port = 8080,
+sk = "sk-xxx",
 ```
 
 #### 配置与蜜罐连接的地址

@@ -45,9 +45,9 @@ pip3 install SecAutoBan RouterOS-api
 更改脚本第`82`-`84`行
 
 ```
-server_ip = "127.0.0.1"
-server_port = 8080
-sk = "sk-xxx"
+server_ip = "127.0.0.1",
+server_port = 8080,
+sk = "sk-xxx",
 ```
 
 #### 修改RouterOS配置

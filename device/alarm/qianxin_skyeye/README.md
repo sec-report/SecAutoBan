@@ -35,9 +35,9 @@ pip3 install SecAutoBan ipaddress
 更改脚本第`43`-`45`行
 
 ```
-server_ip = "127.0.0.1"
-server_port = 8080
-sk = "sk-xxx"
+server_ip = "127.0.0.1",
+server_port = 8080,
+sk = "sk-xxx",
 ```
 
 #### 配置syslog监听地址

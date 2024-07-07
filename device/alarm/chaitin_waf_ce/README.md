@@ -9,24 +9,24 @@
 ### 安装依赖
 
 ```
-pip3 install pycryptodome websocket-client requests PyJWT
+pip3 install SecAutoBan requests PyJWT
 ```
 
 ### 配置模块
 
 #### 修改回连核心模块配置
 
-更改脚本第`156`-`158`行
+更改脚本第`86`-`88`行
 
 ```
-server_ip = "127.0.0.1"
-server_port = 8080
-sk = "sk-xxx"
+server_ip = "127.0.0.1",
+server_port = 8080,
+sk = "sk-xxx",
 ```
 
 #### 修改与WAF连接的地址
 
-更改脚本第`159`行
+更改脚本第`78`行
 
 ```
 chaitin_waf_url = "https://xxx.xxx.xxx.xxx:9443"
@@ -50,7 +50,7 @@ echo "select string_value from options where key='jwt-secret';" | sqlite3 /data/
 
 > `/data/safeline`为长亭WAF默认安装目录，若存放在其他地方请修改。
 
-拿到JWT密钥后填入脚本第`161`行
+拿到JWT密钥后填入脚本第`80`行
 
 ```
 chaitin_waf_login_conf = {
@@ -65,7 +65,7 @@ chaitin_waf_login_conf = {
 
 ##### 方案二: 前端登录（永久有效，不支持TOTP）
 
-将用户名密码填入脚本第`162`-`163`行
+将用户名密码填入脚本第`81`-`82`行
 
 ```
 chaitin_waf_login_conf = {
@@ -82,7 +82,7 @@ chaitin_waf_login_conf = {
 
 ![](./img/3.jpg)
 
-拿到Token后填入脚本第`164`行
+拿到Token后填入脚本第`83`行
 
 ```
 chaitin_waf_login_conf = {

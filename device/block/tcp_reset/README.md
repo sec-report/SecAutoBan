@@ -23,9 +23,9 @@ pip3 install SecAutoBan scapy
 更改脚本第`117`-`119`行
 
 ```
-server_ip = "127.0.0.1"
-server_port = 8080
-sk = "sk-xxx"
+server_ip = "127.0.0.1",
+server_port = 8080,
+sk = "sk-xxx",
 ```
 
 #### 修改镜像网卡名称
