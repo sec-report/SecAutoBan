@@ -21,7 +21,7 @@ def password_login() -> str:
     return r.json()["data"]["jwt"]
 
 
-def get_header():
+def get_header() -> dict:
     header = {}
     if len(chaitin_waf_login_conf["jwt-secret"]) != 0:
         t = int((datetime.datetime.now()+datetime.timedelta(days=7)).timestamp())
