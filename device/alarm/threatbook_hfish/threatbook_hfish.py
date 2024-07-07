@@ -22,8 +22,7 @@ def alarm_analysis(ws_client):
         try:
             r = requests.post(hfish_url + "/api/v1/attack/detail?api_key=" + hfish_api_key, json=post_data, verify=False)
         except Exception as e:
-            sec_auto_ban.print("[-] 获取蜜罐数据失败")
-            print("[-] Error: " + str(e))
+            sec_auto_ban.print("[-] 获取蜜罐数据失败, Error: " + str(e))
             continue
         if r.status_code != 200:
             sec_auto_ban.print("[-] 获取蜜罐数据失败")
