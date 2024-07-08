@@ -20,7 +20,8 @@ def alarm_analysis(ws_client):
             "info_confirm": "0"
         }
         try:
-            r = requests.post(hfish_url + "/api/v1/attack/detail?api_key=" + hfish_api_key, json=post_data, verify=False)
+            url = hfish_config["url"] + "/api/v1/attack/detail?api_key=" + hfish_config["api_key"]
+            r = requests.post(url, json=post_data, verify=False)
         except Exception as e:
             sec_auto_ban.print("[-] 获取蜜罐数据失败, Error: " + str(e))
             continue
@@ -39,8 +40,10 @@ def alarm_analysis(ws_client):
 
 
 if __name__ == "__main__":
-    hfish_url = "https://xxx.xxx.xxx.xxx:4433"
-    hfish_api_key = "xxx"
+    hfish_config = {
+        "url": "https://xxx.xxx.xxx.xxx:4433",
+        "api_key": "xxx"
+    }
     sec_auto_ban = SecAutoBan(
         server_ip="127.0.0.1",
         server_port=8000,

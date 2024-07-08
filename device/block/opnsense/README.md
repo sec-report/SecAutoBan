@@ -45,7 +45,7 @@ sk = "sk-xxx",
 更改脚本第`51`行
 
 ```
-opnsense_url = "http://xxx.xxx.xxx.xxx"
+"url": "http://xxx.xxx.xxx.xxx",
 ```
 
 #### 修改刚刚获取的OPNsense API
@@ -53,8 +53,8 @@ opnsense_url = "http://xxx.xxx.xxx.xxx"
 更改脚本第`52`-`53`行
 
 ```
-opnsense_api_key = 'xxx'
-opnsense_api_secret = 'xxx'
+"api_key": "xxx",
+"api_secret": "xxx",
 ```
 
 ## 运行

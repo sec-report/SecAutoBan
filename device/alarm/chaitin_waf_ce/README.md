@@ -26,10 +26,10 @@ sk = "sk-xxx",
 
 #### 修改与WAF连接的地址
 
-更改脚本第`78`行
+更改脚本第`79`行
 
 ```
-chaitin_waf_url = "https://xxx.xxx.xxx.xxx:9443"
+"url": "https://xxx.xxx.xxx.xxx:9443",
 ```
 
 #### 修改登录配置
@@ -53,7 +53,8 @@ echo "select string_value from options where key='jwt-secret';" | sqlite3 /data/
 拿到JWT密钥后填入脚本第`80`行
 
 ```
-chaitin_waf_login_conf = {
+chaitin_waf_config = {
+    "url": "https://xxx.xxx.xxx.xxx:9443",
     "jwt-secret": "xxxxxxx",  # <-填写这个字段
     "username": "",
     "password": "",
@@ -68,7 +69,8 @@ chaitin_waf_login_conf = {
 将用户名密码填入脚本第`81`-`82`行
 
 ```
-chaitin_waf_login_conf = {
+chaitin_waf_config = {
+    "url": "https://xxx.xxx.xxx.xxx:9443",
     "jwt-secret": "",
     "username": "",  # <-填写这个字段
     "password": "",  # <-填写这个字段
@@ -85,7 +87,8 @@ chaitin_waf_login_conf = {
 拿到Token后填入脚本第`83`行
 
 ```
-chaitin_waf_login_conf = {
+chaitin_waf_config = {
+    "url": "https://xxx.xxx.xxx.xxx:9443",
     "jwt-secret": "",
     "username": "",
     "password": "",

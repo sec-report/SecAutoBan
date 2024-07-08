@@ -22,10 +22,10 @@ sk = "sk-xxx",
 
 #### 配置与蜜罐连接的地址
 
-更改脚本第`43`行
+更改脚本第`44`行
 
 ```
-hfish_url = "https://xxx.xxx.xxx.xxx:4433"
+"url": "https://xxx.xxx.xxx.xxx:4433",
 ```
 
 #### 配置`api_key`
@@ -34,10 +34,10 @@ hfish_url = "https://xxx.xxx.xxx.xxx:4433"
 
 ![](./img/1.jpg)
 
-更改脚本第`44`行
+更改脚本第`45`行
 
 ```
-hfish_api_key = "xxx"
+"api_key": "xxx"
 ```
 
 ## 运行
