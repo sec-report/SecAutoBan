@@ -36,6 +36,7 @@ def get_header() -> dict:
         }
         token = jwt.encode(jwt_payload, chaitin_waf_config["jwt-secret"], algorithm='HS256')
         header["Authorization"] = "Bearer " + token
+        return header
     if len(chaitin_waf_config["username"]) != 0:
         header["Authorization"] = "Bearer " + password_login()
         return header

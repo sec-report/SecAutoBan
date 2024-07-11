@@ -40,7 +40,7 @@ class WebSocketClient:
         if message["method"] == "login":
             self.is_login = True
             util.print("[+] 登录成功，设备名称: " + message["data"]["deviceName"])
-        if self.type == "block":
+        if self.client_type == "block":
             if message["method"] == "blockIp":
                 util.print("[+] 封禁IP: " + message["data"]["ip"])
                 self.block_ip(message["data"]["ip"])

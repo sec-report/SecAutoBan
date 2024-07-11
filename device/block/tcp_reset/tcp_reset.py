@@ -125,5 +125,5 @@ if __name__ == "__main__":
     pool = ThreadPool(processes=1)
     pool.apply_async(run_sniff)
     pool.close()
-    pool.join()
     sec_auto_ban.run()
+    pool.join()
