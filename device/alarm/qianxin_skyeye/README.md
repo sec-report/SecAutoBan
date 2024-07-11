@@ -1,5 +1,11 @@
 # 奇安信天眼
 
+## 下载脚本
+
+```
+wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/qianxin_skyeye/qianxin_skyeye.py
+```
+
 ## 配置说明
 
 ### 配置天眼

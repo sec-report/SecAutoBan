@@ -2,6 +2,12 @@
 
 OPNsense封禁模块
 
+## 下载脚本
+
+```
+wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/opnsense/opnsense.py
+```
+
 ## 配置OPNsense
 
 ### 添加API

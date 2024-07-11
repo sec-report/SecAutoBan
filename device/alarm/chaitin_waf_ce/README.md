@@ -4,6 +4,12 @@
 
 ![](./img/1.jpg)
 
+## 下载脚本
+
+```
+wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/chaitin_waf_ce/chaitin_waf_ce.py
+```
+
 ## 配置说明
 
 ### 安装依赖

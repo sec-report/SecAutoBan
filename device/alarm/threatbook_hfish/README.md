@@ -1,5 +1,11 @@
 # 微步蜜罐HFish
 
+## 下载脚本
+
+```
+wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/threatbook_hfish/threatbook_hfish.py
+```
+
 ## 配置说明
 
 ### 安装依赖
