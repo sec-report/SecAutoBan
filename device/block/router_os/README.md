@@ -2,7 +2,7 @@
 
 RouterOS封禁模块
 
-## 下载脚本
+## 下载模块
 
 ```
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/router_os/router_os.py

@@ -1,6 +1,6 @@
 # 奇安信天眼
 
-## 下载脚本
+## 下载模块
 
 ```
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/qianxin_skyeye/qianxin_skyeye.py

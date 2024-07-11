@@ -4,7 +4,7 @@
 
 当双向检测到封禁IP进行TCP握手时，模块将发送reset数据包强制关闭连接。
 
-## 下载脚本
+## 下载模块
 
 ```
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/block/tcp_reset/tcp_reset.py

@@ -4,7 +4,7 @@
 
 ![](./img/1.jpg)
 
-## 下载脚本
+## 下载模块
 
 ```
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/device/alarm/chaitin_waf_ce/chaitin_waf_ce.py
