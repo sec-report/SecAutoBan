@@ -69,6 +69,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 | [微步蜜罐HFish](./device/alarm/threatbook_hfish) | [OPNsense](./device/block/opnsense) |
 | [奇安信天眼](./device/alarm/qianxin_skyeye) |[RouterOS](./device/block/router_os) |
 | [奇安信椒图](./device/alarm/qianxin_jowtolock) |  |
+| [绿盟WAF](./device/alarm/nsfocus_waf) |  |
 
 ## 黑/白名单说明
 
