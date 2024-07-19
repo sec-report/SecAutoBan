@@ -32,7 +32,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
 
 def alarm_analysis(ws_client):
     with socketserver.ThreadingUDPServer(("0.0.0.0", listen_syslog_udp_port), lambda *args: SyslogUDPHandler(*args, ws_client=ws_client)) as server:
-        print("[+] 监听SysLog端口: " + str(listen_syslog_udp_port) + "/UDP")
+        sec_auto_ban.print("[+] 监听SysLog端口: " + str(listen_syslog_udp_port) + "/UDP")
         server.serve_forever()
 
 
