@@ -11,10 +11,12 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
         message = data.decode('utf-8')
         if message[:4] != "<11>":
             return
+        if "  action:Block  " not in message:
+            return
         src_ip = ""
         dst_ip = ""
         event_type = ""
-        for i in message.split(" "):
+        for i in message.split("  "):
             if i[:7] == "src_ip:":
                 src_ip = i[7:]
                 continue
