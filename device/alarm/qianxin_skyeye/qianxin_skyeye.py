@@ -1,3 +1,4 @@
+import json
 import ipaddress
 import socketserver
 from SecAutoBan import SecAutoBan
