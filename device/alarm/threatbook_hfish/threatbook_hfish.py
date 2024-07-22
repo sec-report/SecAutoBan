@@ -5,7 +5,6 @@ requests.packages.urllib3.disable_warnings()
 
 
 def alarm_analysis(ws_client):
-    ip_list = []
     while True:
         time.sleep(5)
         post_data = {
@@ -32,11 +31,7 @@ def alarm_analysis(ws_client):
             sec_auto_ban.print("[-] 获取蜜罐数据失败")
             continue
         for i in r.json()["data"]["detail_list"]:
-            if i["attack_ip"] not in ip_list:
-                ws_client.send_alarm(i["attack_ip"], "攻击" + i["service_name"])
-                ip_list.append(i["attack_ip"])
-                if len(ip_list) > 10000:
-                    ip_list.pop(0)
+            ws_client.send_alarm(i["attack_ip"], "攻击" + i["service_name"])
 
 
 if __name__ == "__main__":

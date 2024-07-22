@@ -45,8 +45,6 @@ def get_header() -> dict:
 
 
 def alarm_analysis(ws_client):
-    event_id_list = []
-    ip_list = []
     while True:
         time.sleep(5)
         try:
@@ -65,14 +63,7 @@ def alarm_analysis(ws_client):
             sec_auto_ban.print("[-] WAF连接失败")
             continue
         for i in r.json()["data"]["data"]:
-            if i["event_id"] not in event_id_list and i["src_ip"] not in ip_list:
-                ws_client.send_alarm(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
-                event_id_list.append(i["event_id"])
-                if len(event_id_list) > 1000:
-                    event_id_list.pop(0)
-                ip_list.append(i["src_ip"])
-                if len(ip_list) > 1000:
-                    ip_list.pop(0)
+            ws_client.send_alarm(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
 
 
 if __name__ == "__main__":

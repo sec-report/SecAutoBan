@@ -7,6 +7,7 @@ class WebSocketClient:
     init = False
     is_login = False
     sync_flag = False
+    send_alarm_ip_list = []
     
     def __init__(self, server_ip: str, server_port: int, sk: str, client_type: str, block_ip=None, unblock_ip=None, get_all_block_ip=None):
         self.server_ip = server_ip
@@ -105,6 +106,11 @@ class WebSocketClient:
         if not self.is_login:
             util.print("[-] 未登录成功，无法发送数据")
             return
+        if ip in self.send_alarm_ip_list:
+            return
+        if len(self.send_alarm_ip_list) > 1000:
+            self.send_alarm_ip_list.pop(0)
+        self.send_alarm_ip_list.append(ip)
         send_data = {
             "method": "alarmIp",
             "data": {
