@@ -16,19 +16,18 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
         super().__init__(request, client_address, server)
     def handle(self):
         data = self.request[0]
+        if len(data) == 0:
+            return
         message = data.decode('utf-8')
-        messages = message.split('\n')
-        for msg in messages:
-            if msg == "":
-                continue
-            msg = json.loads(msg.split("|!alarm|!")[1])
-            sip = msg["attack_sip"]
-            if sip == "":
-                continue
-            if is_lan(sip):
-                continue
-            origin = "攻击" + msg["alarm_sip"] + ": [" + msg["type"] + "]" + msg["vuln_type"]
-            self.ws_client.send_alarm(sip, origin)
+        msg = json.loads(message.split("|!alarm|!")[1])
+        sip = msg["attack_sip"]
+        if sip == "":
+            return
+        if is_lan(sip):
+            return
+        origin = "攻击" + msg["alarm_sip"] + ": [" + msg["type"] + "]" + msg["vuln_type"]
+        self.ws_client.send_alarm(sip, origin)
+
 
 
 def alarm_analysis(ws_client):
