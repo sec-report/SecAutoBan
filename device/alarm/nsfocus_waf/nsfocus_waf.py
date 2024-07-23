@@ -9,8 +9,6 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
     def handle(self):
         data = self.request[0]
         message = data.decode('utf-8')
-        if message[:4] != "<11>":
-            return
         if "  action:Block  " not in message:
             return
         src_ip = ""
