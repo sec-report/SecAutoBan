@@ -59,11 +59,13 @@ class WebSocketClient:
                     return
                 self.sync_flag = True
                 util.print("[+] 同步全量封禁IP库: " + str(len(message["data"]["ips"])) + "个")
-                for deviceIp in self.get_all_block_ip():
+                device_all_block_ip = self.get_all_block_ip()
+                for deviceIp in device_all_block_ip:
                     if deviceIp not in message["data"]["ips"]:
                         self.unblock_ip(deviceIp)
                 for ip in message["data"]["ips"]:
-                    self.block_ip(ip)
+                    if ip not in device_all_block_ip:
+                        self.block_ip(ip)
                 util.print("[+] 同步全量封禁IP库完成")
                 self.sync_flag = False
                 return    

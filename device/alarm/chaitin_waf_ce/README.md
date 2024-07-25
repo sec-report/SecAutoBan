@@ -26,7 +26,7 @@ pip3 install SecAutoBan requests PyJWT
 
 ```
 server_ip = "127.0.0.1",
-server_port = 8080,
+server_port = 80,
 sk = "sk-xxx",
 ```
 

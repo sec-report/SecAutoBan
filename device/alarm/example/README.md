@@ -12,7 +12,7 @@ pip3 install SecAutoBan
 
 ```
 server_ip = "127.0.0.1",  # 平台IP
-server_port = 8080,  # 平台端口
+server_port = 80,  # 平台端口
 sk = "sk-xxx",  # 回连密钥
 ```
 
@@ -34,7 +34,7 @@ syslog模版，自带了一个syslog服务器（默认监听567端口），需�
 listen_syslog_udp_port = 567  # syslog监听端口
 ...
 server_ip = "127.0.0.1",  # 平台IP
-server_port = 8080,  # 平台端口
+server_port = 80,  # 平台端口
 sk = "sk-xxx",  # 回连密钥
 ```
 

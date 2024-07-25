@@ -26,7 +26,7 @@ if __name__ == "__main__":
     listen_syslog_udp_port = 567
     sec_auto_ban = SecAutoBan(
         server_ip="127.0.0.1",
-        server_port=8000,
+        server_port=80,
         sk="sk-*****",
         client_type="alarm",
         alarm_analysis = alarm_analysis

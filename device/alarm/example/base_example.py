@@ -11,7 +11,7 @@ def alarm_analysis(ws_client):
 if __name__ == "__main__":
     sec_auto_ban = SecAutoBan(
         server_ip="127.0.0.1",
-        server_port=8000,
+        server_port=80,
         sk="sk-*****",
         client_type="alarm",
         alarm_analysis = alarm_analysis

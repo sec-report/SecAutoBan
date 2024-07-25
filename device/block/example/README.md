@@ -16,7 +16,7 @@ pip3 install SecAutoBan
 
 ```
 server_ip = "127.0.0.1",  # 平台IP
-server_port = 8080,  # 平台端口
+server_port = 80,  # 平台端口
 sk = "sk-xxx",  # 回连密钥
 ```
 
@@ -56,7 +56,7 @@ def check_exist_ip(ip) -> bool:  # 方法用于防止重复封禁单个IP
 
 ```
 server_ip = "127.0.0.1",  # 平台IP
-server_port = 8080,  # 平台端口
+server_port = 80,  # 平台端口
 sk = "sk-xxx",  # 回连密钥
 ```
 

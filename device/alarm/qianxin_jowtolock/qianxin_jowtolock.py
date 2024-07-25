@@ -35,7 +35,7 @@ if __name__ == "__main__":
     bypass_lan = True  # 过滤内网攻击，True 开启 | False 关闭
     sec_auto_ban = SecAutoBan(
         server_ip="127.0.0.1",
-        server_port=8000,
+        server_port=80,
         sk="sk-*****",
         client_type="alarm",
         alarm_analysis = alarm_analysis
