@@ -1,3 +1,4 @@
+import sys
 import time
 import signal
 import requests
@@ -10,7 +11,7 @@ def signal_handler(signal, frame):
     sec_auto_ban.print("[+] 注销Session")
     publish()
     logout()
-    exit()
+    sys.exit(0)
 
 
 def login():
@@ -23,7 +24,7 @@ def login():
         sec_auto_ban.print("[+] 防火墙登录成功")
     else:
         sec_auto_ban.print("[-] 防火墙登录失败")
-        exit()
+        sys.exit(1)
     global check_point_session_id
     check_point_session_id = r.json()["sid"]
 
@@ -59,6 +60,7 @@ def keepalive():
     }
     r = requests.post(check_point_conf["url"] + "/web_api/keepalive", json={}, headers=header, verify=False)
     if r.status_code != 200:
+        publish()
         login()
     keepalive()
 
@@ -140,6 +142,10 @@ def get_all_block_ip() -> list:
         "X-chkp-sid": check_point_session_id
     }
     r = requests.post(check_point_conf["url"] + "/web_api/show-group", json=post_json, headers=header, verify=False)
+    if "members" not in r.json():
+        publish()
+        login()
+        return get_all_block_ip()
     return [i["ipv4-address"]for i in r.json()["members"]]
 
 
