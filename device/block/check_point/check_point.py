@@ -92,6 +92,8 @@ def get_host_uid(ip: str) -> str:
         "X-chkp-sid": check_point_session_id
     }
     r = requests.post(check_point_conf["url"] + "/web_api/add-host", json=post_json, headers=header, verify=False)
+    if "uid" not in r.json():
+        return ""
     return r.json()["uid"]
 
 
@@ -101,6 +103,7 @@ def block_ip(ip):
     host_uid = get_host_uid(ip)
     if len(host_uid) == 0:
         sec_auto_ban.print("[-] IP: " + ip + " 添加失败")
+        return
     post_json = {
         "name": check_point_conf["group_name"],
         "members": {
