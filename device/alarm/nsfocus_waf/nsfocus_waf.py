@@ -24,6 +24,8 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
             if i[:11] == "event_type:":
                 if i[11:] == "Info_Leak":
                     return
+                if i[11:] == "WEB Access Logs":
+                    return
                 event_type = i[11:]
             if src_ip != "" and dst_ip != "" and event_type != "":
                 break
