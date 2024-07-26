@@ -22,6 +22,8 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
                 dst_ip = i[7:]
                 continue
             if i[:11] == "event_type:":
+                if i[11:] == "Info_Leak":
+                    return
                 event_type = i[11:]
             if src_ip != "" and dst_ip != "" and event_type != "":
                 break
