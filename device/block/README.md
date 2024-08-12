@@ -5,3 +5,4 @@
 * [opnsense](./opnsense): OPNsense
 * [router_os](./router_os): RouterOS
 * [check_point](./check_point): CheckPoint
+* [qianxin_firewall](./qianxin_firewall): 奇安信防火墙
