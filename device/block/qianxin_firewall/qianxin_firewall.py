@@ -119,7 +119,6 @@ if __name__ == "__main__":
         "username": "xxx",
         "password": "xxx",
     }
-    get_all_block_ip()
     sec_auto_ban = SecAutoBan(
         server_ip="127.0.0.1",
         server_port=80,
