@@ -13,7 +13,7 @@ def block_ip(ip):
     if r.status_code != 200:
         customize_print("[-] 添加封禁失败")
         return
-    if r.json["status"] != "done":
+    if r.json()["status"] != "done":
         customize_print("[-] 添加封禁失败")
 
 
@@ -26,7 +26,7 @@ def unblock_ip(ip):
     if r.status_code != 200:
         customize_print("[-] 解除封禁失败")
         return
-    if r.json["status"] != "done":
+    if r.json()["status"] != "done":
         customize_print("[-] 解除封禁失败")
 
 
