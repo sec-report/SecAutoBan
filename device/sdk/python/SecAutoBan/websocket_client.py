@@ -2,12 +2,14 @@ import json
 import time
 import websocket
 from . import util
+from multiprocessing.pool import ThreadPool
 
 class WebSocketClient:
     init = False
     is_login = False
     sync_flag = False
     send_alarm_ip_list = []
+    pool = ThreadPool(processes=1)
     
     def __init__(self, server_ip: str, server_port: int, sk: str, client_type: str, block_ip=None, unblock_ip=None, get_all_block_ip=None):
         self.server_ip = server_ip
@@ -33,6 +35,18 @@ class WebSocketClient:
         )
         self.init =True
 
+    def sync_block_ip(self, ips):
+        self.sync_flag = True
+        util.print("[+] 同步全量封禁IP库: " + str(len(ips)) + "个")
+        device_all_block_ip = self.get_all_block_ip()
+        for deviceIp in device_all_block_ip:
+            if deviceIp not in message["data"]["ips"]:
+                self.unblock_ip(deviceIp)
+        for ip in message["data"]["ips"]:
+            if ip not in device_all_block_ip:
+                self.block_ip(ip)
+        util.print("[+] 同步全量封禁IP库完成")
+        self.sync_flag = False
 
     def on_message(self, w, message):
         if len(message) <= 16:
@@ -57,17 +71,7 @@ class WebSocketClient:
                 if self.sync_flag:
                     util.print("[-] 全量封禁IP同步失败：已有线程进行全量封禁IP库同步，跳过本次请求")
                     return
-                self.sync_flag = True
-                util.print("[+] 同步全量封禁IP库: " + str(len(message["data"]["ips"])) + "个")
-                device_all_block_ip = self.get_all_block_ip()
-                for deviceIp in device_all_block_ip:
-                    if deviceIp not in message["data"]["ips"]:
-                        self.unblock_ip(deviceIp)
-                for ip in message["data"]["ips"]:
-                    if ip not in device_all_block_ip:
-                        self.block_ip(ip)
-                util.print("[+] 同步全量封禁IP库完成")
-                self.sync_flag = False
+                self.pool.apply_async(self.sync_block_ip, (message["data"]["ips"],))
                 return    
 
     def on_error(self, w, error):
