@@ -70,7 +70,7 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 | [奇安信天眼](./device/alarm/qianxin_skyeye) |[RouterOS](./device/block/router_os) |
 | [奇安信椒图](./device/alarm/qianxin_jowtolock) | [CheckPoint](./check_point) |
 | [绿盟WAF](./device/alarm/nsfocus_waf) | [奇安信防火墙](./device/block/qianxin_firewall) |
-| [科来网络安全分析审计系统](./device/alarm/kelai_wangluoanquanfenxishenjixitong) |  |
+| [科来网络安全分析审计系统](./device/alarm/kelai_wangluoanquanfenxishenjixitong) | [钉钉告警通知](./device/block/dingtalk_robot) |
 
 
 ## 黑/白名单说明
