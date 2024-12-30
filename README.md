@@ -17,21 +17,30 @@
 
 ![](./img/mind.jpg)
 
-## 核心模块安装
+## 社区版私有部署方案
+
+> 单机版仅供社区交流学习，禁止任何商业/OEM行为，商业版请联系邮箱[sec-report@outlook.com](mailto:sec-report@outlook.com)。
+
+### 安装 && 运行
+
 ```shell
-mkdir SecAutoBan && cd SecAutoBan
+mkdir SecReport && cd SecReport
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/run.sh
 chmod +x run.sh
 ./run.sh
-
-# 停止
-./run.sh stop
-
-# 更新
-./run.sh update
 ```
 
+> [run.sh 命令介绍](#runsh-命令介绍)
+
 Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理后台，初始化管理员账号
+
+### 激活
+
+关注微信公众号: `信息安全报告`，点击公众号菜单栏`激活码`-`SecAutoBan`，获取激活码。
+
+<img width="250" src="./img/mp_wx.jpg">
+
+获取到激活码后，请在后台: `后台管理`-`证书管理`，进行绑定。
 
 ## 告警模块使用
 首先在管理后台添加告警设备：
@@ -91,11 +100,27 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 
 <img width="250" src="./img/wx.jpg">
 
-## 公众号
+## run.sh 命令介绍
 
-> 关注微信公众号: `信息安全报告`，更新会第一时间推送
+```shell
+# 启动服务
+./run.sh
 
-<img width="250" src="./img/mp_wx.jpg">
+# 停止服务
+./run.sh stop
+
+# 更新平台
+./run.sh update
+
+# 添加用户
+./build.sh exec addUser -username xxx -password xxx -role admin
+
+# 修改用户密码
+./build.sh exec changeUserPassword -username xxx -password xxx
+
+# 设置是否开启基础登录
+./build.sh exec setBasisLogin -enabled true
+```
 
 ## 其他作品
 
