@@ -1,7 +1,7 @@
 name: sec_auto_ban
 
 services:
-    mysql:
+  mysql:
     image: mysql:latest
     container_name: mysql
     hostname: mysql
