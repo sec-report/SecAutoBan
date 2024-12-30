@@ -1,21 +1,18 @@
 name: sec_auto_ban
 
 services:
-  clickhouse:
-    image: clickhouse/clickhouse-server:latest
-    container_name: clickhouse
-    hostname: clickhouse
+    mysql:
+    image: mysql:latest
+    container_name: mysql
+    hostname: mysql
     restart: always
     networks:
       - sec_auto_ban
     environment:
-      CLICKHOUSE_DB: sec_auto_ban
-      CLICKHOUSE_USER: sec_auto_ban
-      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
-      CLICKHOUSE_PASSWORD: ${clickhouse_password}
+      MYSQL_ROOT_PASSWORD: ${mysql_password}
+      MYSQL_DATABASE: sec_auto_ban
     volumes:
-      - ./data/clickhouse/data:/var/lib/clickhouse
-      - ./data/clickhouse/log:/var/log/clickhouse-server
+      - ./data/mysql:/var/lib/mysql
   sec-auto-ban:
     image: secreport/sec-auto-ban:latest
     container_name: sec_auto_ban
@@ -24,7 +21,7 @@ services:
         - clickhouse
     environment:
       listen: 0.0.0.0:80
-      db_dsn: clickhouse://sec_auto_ban:${clickhouse_password}@clickhouse:9000/sec_auto_ban
+      db_dsn: mysql://root:${mysql_password}@tcp(mysql:3306)/sec_auto_ban?charset=utf8mb4&parseTime=True&loc=Local
     networks:
       - sec_auto_ban
     ports:
