@@ -112,14 +112,8 @@ Docker全部运行后访问 [http://127.0.0.1/](http://127.0.0.1/) 访问管理�
 # 更新平台
 ./run.sh update
 
-# 添加用户
-./build.sh exec addUser -username xxx -password xxx -role admin
-
 # 修改用户密码
-./build.sh exec changeUserPassword -username xxx -password xxx
-
-# 设置是否开启基础登录
-./build.sh exec setBasisLogin -enabled true
+./build.sh exec changeUserPassword -username admin -password xxx
 ```
 
 ## 其他作品
