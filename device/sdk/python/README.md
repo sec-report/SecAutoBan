@@ -14,7 +14,7 @@ pip3 install SecAutoBan
 from SecAutoBan import SecAutoBan
 
 def alarm_analysis(ws_client):
-    ws_client.send_alarm("127.1.0.3", "NMAP 扫描 127.0.0.1")
+    ws_client.send_alarm("127.1.0.3", "127.0.0.1", "NMAP 扫描")
 
 sec_auto_ban = SecAutoBan(
     server_ip="127.0.0.1",
