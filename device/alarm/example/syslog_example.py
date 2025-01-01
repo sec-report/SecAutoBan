@@ -1,7 +1,7 @@
 import socketserver
 from SecAutoBan import SecAutoBan
 
-# 假设Syslog格式为`ip\t报警详情，例如：127.1.0.3\tNMAP 扫描 127.0.0.1`
+# 假设Syslog格式为`攻击IP\t被攻击资产\t报警详情，例如：1.1.1.1\t127.0.0.1\tNMAP 扫描`
 class SyslogUDPHandler(socketserver.BaseRequestHandler):
     def __init__(self, request, client_address, server, ws_client):
         self.ws_client = ws_client
@@ -13,7 +13,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
         for msg in messages:
             if msg == "":
                 continue
-            self.ws_client.send_alarm(msg.split('\t')[0], msg.split('\t')[1])
+            self.ws_client.send_alarm(msg.split('\t')[0], msg.split('\t')[1], msg.split('\t')[2])
 
 
 def alarm_analysis(ws_client):

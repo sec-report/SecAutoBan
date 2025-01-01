@@ -21,7 +21,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
                 continue
             if bypass_lan and msg["attackIpAddress"] == "局域网":
                 continue
-            self.ws_client.send_alarm(msg["attackIp"], msg["action"]["text"])
+            self.ws_client.send_alarm(msg["attackIp"], "", msg["action"]["text"])
 
 
 def alarm_analysis(ws_client):

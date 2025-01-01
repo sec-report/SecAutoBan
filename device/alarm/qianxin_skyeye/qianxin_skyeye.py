@@ -25,8 +25,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
             return
         if is_lan(sip):
             return
-        origin = "攻击" + msg["alarm_sip"] + ": [" + msg["type"] + "]" + msg["vuln_type"]
-        self.ws_client.send_alarm(sip, origin)
+        self.ws_client.send_alarm(sip, msg["alarm_sip"], "[" + msg["type"] + "]" + msg["vuln_type"])
 
 
 

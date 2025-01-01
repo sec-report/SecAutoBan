@@ -29,7 +29,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
                 event_type = i[11:]
             if src_ip != "" and dst_ip != "" and event_type != "":
                 break
-        self.ws_client.send_alarm(src_ip, "攻击" + dst_ip + ": " + event_type)
+        self.ws_client.send_alarm(src_ip, dst_ip, event_type)
 
 
 def alarm_analysis(ws_client):

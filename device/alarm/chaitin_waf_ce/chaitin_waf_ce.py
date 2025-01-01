@@ -63,7 +63,7 @@ def alarm_analysis(ws_client):
             sec_auto_ban.print("[-] WAF连接失败")
             continue
         for i in r.json()["data"]["data"]:
-            ws_client.send_alarm(i["src_ip"], "攻击资产：" + i["host"] + " " + i["reason"])
+            ws_client.send_alarm(i["src_ip"], i["host"], i["reason"])
 
 
 if __name__ == "__main__":

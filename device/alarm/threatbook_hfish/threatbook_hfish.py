@@ -31,7 +31,7 @@ def alarm_analysis(ws_client):
             sec_auto_ban.print("[-] 获取蜜罐数据失败")
             continue
         for i in r.json()["data"]["detail_list"]:
-            ws_client.send_alarm(i["attack_ip"], "攻击" + i["service_name"])
+            ws_client.send_alarm(i["attack_ip"], "蜜罐", i["service_name"])
 
 
 if __name__ == "__main__":

@@ -105,7 +105,7 @@ class WebSocketClient:
             return
         self.ws.run_forever(skip_utf8_validation=True)
 
-    def send_alarm(self, ip: str, origin: str):
+    def send_alarm(self, ip: str, attackAsset: str, attackMethod: str):
         if self.client_type == "block":
             util.print("[-] 封禁模块无法发送告警数据")
             return
@@ -121,9 +121,10 @@ class WebSocketClient:
             "method": "alarmIp",
             "data": {
                 "ip": ip,
-                "origin": origin
+                "attackAsset": attackAsset,
+                "attackMethod": attackMethod
             }
         }
         iv = util.random_bytes()
-        util.print("[+] 发送告警IP: " + ip + "\t" + origin)
+        util.print("[+] 发送告警IP: " + ip + "->" + attackAsset + "\t" + attackMethod)
         self.ws.send(iv + util.aes_cfb_encrypt(self.sk[3:].encode(), iv, json.dumps(send_data).encode()))
