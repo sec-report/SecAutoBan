@@ -38,7 +38,7 @@ sk = "sk-xxx",
 
 ```
 webhook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="
-secret = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+hook_key = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
 ```
 ## 运行
 
