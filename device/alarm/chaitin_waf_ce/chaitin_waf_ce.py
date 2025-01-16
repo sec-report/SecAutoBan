@@ -40,7 +40,10 @@ def get_header() -> dict:
     if len(chaitin_waf_config["username"]) != 0:
         header["Authorization"] = "Bearer " + password_login()
         return header
-    header["Authorization"] = "Bearer " + chaitin_waf_config["bearer"]
+    if len(chaitin_waf_config["bearer"]) != 0:
+        header["Authorization"] = "Bearer " + chaitin_waf_config["bearer"]
+    if len(chaitin_waf_config["apikey"]) != 0:
+        header["X-SLCE-API-TOKEN"] = chaitin_waf_config["apikey"]
     return header
 
 
@@ -69,6 +72,7 @@ def alarm_analysis(ws_client):
 if __name__ == "__main__":
     chaitin_waf_config = {
         "url": "https://xxx.xxx.xxx.xxx:9443",
+        "apikey": "",
         "jwt-secret": "",
         "username": "",
         "password": "",
