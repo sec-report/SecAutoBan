@@ -40,9 +40,9 @@ class WebSocketClient:
         util.print("[+] 同步全量封禁IP库: " + str(len(ips)) + "个")
         device_all_block_ip = self.get_all_block_ip()
         for deviceIp in device_all_block_ip:
-            if deviceIp not in message["data"]["ips"]:
+            if deviceIp not in ips:
                 self.unblock_ip(deviceIp)
-        for ip in message["data"]["ips"]:
+        for ip in ips:
             if ip not in device_all_block_ip:
                 self.block_ip(ip)
         util.print("[+] 同步全量封禁IP库完成")
