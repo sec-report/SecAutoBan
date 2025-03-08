@@ -9,7 +9,11 @@ downloadSelf(){
 
 downloadDockerCompose(){
     if [ ! -f "docker-compose.yml" ]; then
-        wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/docker-compose.yml -O docker-compose.yml
+        if curl -s http://cip.cc | grep -q "中国"; then
+            wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/docker-compose_cn.yml -O docker-compose.yml
+        else
+            wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/docker-compose.yml -O docker-compose.yml
+        fi
     fi
 }
 
