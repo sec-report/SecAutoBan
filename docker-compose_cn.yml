@@ -1,0 +1,33 @@
+name: sec_auto_ban
+
+services:
+  mysql:
+    image: registry.ap-southeast-1.aliyuncs.com/sec-auto-ban/mysql:latest
+    container_name: mysql
+    hostname: mysql
+    restart: always
+    networks:
+      - sec_auto_ban
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_password}
+      MYSQL_DATABASE: sec_auto_ban
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+  sec-auto-ban:
+    image: registry.ap-southeast-1.aliyuncs.com/sec-auto-ban/sec-auto-ban:latest
+    container_name: sec_auto_ban
+    restart: always
+    depends_on:
+        - mysql
+    environment:
+      listen: 0.0.0.0:80
+      db_dsn: mysql://root:${mysql_password}@tcp(mysql:3306)/sec_auto_ban?charset=utf8mb4&parseTime=True&loc=Local
+    networks:
+      - sec_auto_ban
+    ports:
+      - 80:80
+
+networks:
+  sec_auto_ban:
+    name: sec_auto_ban
+    driver: bridge
