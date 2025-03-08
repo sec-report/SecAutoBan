@@ -24,7 +24,7 @@
 ### 安装 && 运行
 
 ```shell
-mkdir SecReport && cd SecReport
+mkdir SecAutoBan && cd SecAutoBan
 wget https://raw.githubusercontent.com/sec-report/SecAutoBan/main/run.sh
 chmod +x run.sh
 ./run.sh
