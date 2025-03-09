@@ -1,11 +1,11 @@
 # SecAutoBan
 安全设备告警IP全自动封禁平台，支持百万IP秒级分析处理。
 
-![](./img/index.jpg)
+![](./img/index.gif)
 
 封禁流水：
 
-![](./img/flow.gif)
+![](./img/dashboard.gif)
 
 # 开始使用
 
