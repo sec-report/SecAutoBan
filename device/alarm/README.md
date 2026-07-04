@@ -10,3 +10,4 @@
 * [sangfor_sip](./sangfor_sip): 深信服态势感知
 * [venustech_qwaqtsgzxt](./venustech_qwaqtsgzxt): 启明星辰全网安全态势感知系统
 * [topsec_waf](./topsec_waf): 天融信WAF
+* [riversecurity_botgate](./riversecurity_botgate): 瑞数动态安全Botgate
